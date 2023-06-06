@@ -59,6 +59,7 @@ class AppLink {
   // Coupon
 
   static const String checkcoupon = "$server/coupon/checkcoupon.php";
+  static const String add_item = "$server/admin/items/add.php";
 
   // Checkout
 

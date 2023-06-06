@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '../../core/localization/changelocal.dart';
 import '../../core/services/services.dart';
 import 'about_us.dart';
+import 'add_items.dart';
 import 'language.dart';
 
 class Settings extends StatefulWidget {
@@ -86,6 +87,13 @@ class _SettingsState extends State<Settings> {
               ),
               ListTile(
                 onTap: () {
+Get.to(AddItem())  ;              },
+                trailing: Icon(Icons.add_circle_outline, color: Color(0xffe74c3c)),
+                title: const Text("Add Item"),
+              ),
+
+              ListTile(
+                onTap: () {
                   Get.to(AboutUs());
                 },
                 trailing:
@@ -137,11 +145,23 @@ class _SettingsState extends State<Settings> {
                             ),
                           )));
                 },
-                trailing: ar==true?const Text(
-                        'Ar',
-                        style: TextStyle(color: Color(0xffe74c3c)),
-                      )
-                    : const Text('En', style: TextStyle(color: Color(0xffe74c3c))),
+                trailing:Container(
+                  height: 22,width: 22,
+                  decoration:  BoxDecoration(
+             border:  Border.all(
+    color: Color(0xffe74c3c),
+width: 2
+    ),
+                    shape: BoxShape.rectangle
+                  ),
+                  child:  ar==true?const Center(
+                    child: Text(
+                      'Ar',
+                      style: TextStyle(color: Color(0xffe74c3c),fontSize: 10),
+                    ),
+                  )
+                      : Center(child: const Text('En', style: TextStyle(color: Color(0xffe74c3c),fontSize: 10))),
+                ),
                 title: const Text("Language"),
               ),
               ListTile(
